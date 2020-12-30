@@ -1,0 +1,19 @@
+{{ define "main" }}
+    <table class="metadata">
+        {{ if .Params.original_url }}
+            <tr>
+                <td>🔗</td>
+                <td><a href="{{ .Params.original_url }}">{{ .Params.original_url }}</a></td>
+            </tr>
+        {{ end }}
+        {{ if .Date }}
+            <tr>
+                <td style="width: 13px;">📅</td>
+                <td>{{  dateFormat "2006-01-02" .Date }}</td>
+            </tr>
+        {{ end }}
+    </table>
+    <article id="content">
+        {{ .Content }}
+    </article>
+{{ end }}

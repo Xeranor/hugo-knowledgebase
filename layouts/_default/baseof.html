@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+        <link href="/css/my.css" rel="stylesheet">
+        <title>
+            {{ block "title" . }}
+                {{ .Site.Title }}
+            {{ end }}
+        </title>
+    </head>
+    <body>
+        <nav id="header">
+            {{ partial "search" . }}
+        </nav>
+        <nav id="sidebar">
+            {{ partial "section_sidebar" .Site }}
+        </nav>
+        <main id="main">
+            {{ partial "breadcrumb" .}}
+            <div id="container">
+                <div id="content-container">
+                    {{ block "main" .}}
+                    {{ end }}
+                </div>
+                <div id="search-results" style="display: none;">
+                    <h1>Suche</h1>
+                    <div class="note-list" id='search-result-entries'>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <button id="toggle-sidebar"><</button>
+        <template id="search_entry">
+            <article class="card">
+                <div class="card-body">
+
+                <h3 class="card-title">
+                    <a class="title"></a>
+                </h3>
+                <p class="card-text"></p>
+                </div>
+            </article>
+        </template>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="/js/search2.js"></script>
+    </body>
+</html>
+
+

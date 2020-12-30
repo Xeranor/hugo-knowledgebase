@@ -1,0 +1,16 @@
+services:
+    hugo:
+        image: klakegg/hugo
+        command: -w --destination /deploy
+        volumes:
+            - ./:/src
+            - $HOME/Nextcloud/Notes/:/src/content:ro
+            - deploy-volume:/deploy
+    nginx:
+        image: nginx
+        ports:
+          - 0.0.0.0:8081:80
+        volumes:
+            - deploy-volume:/usr/share/nginx/html:ro
+volumes:
+    deploy-volume:

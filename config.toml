@@ -1,0 +1,8 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Meine Notizen"
+#theme = "fuji"
+
+
+[outputs]
+home = ["HTML", "JSON"]

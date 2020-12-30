@@ -1,0 +1,12 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range .Site.RegularPages -}}
+    {{ $TitleAlt := "" }}
+    {{ if .Title }}
+        {{ .Scratch.Set "Title" .Title }}
+    {{ else }}
+        {{ .Scratch.Set "Title" .File.LogicalName }}
+    {{ end }}
+    {{ $Title := .Scratch.Get "Title" }}
+    {{- $.Scratch.Add "index" (dict "title" $Title "tags" .Params.tags "content" .Plain "permalink" .RelPermalink) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

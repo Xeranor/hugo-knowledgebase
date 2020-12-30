@@ -1,0 +1,16 @@
+{{ define "partials/recursive_sidebar" }}
+    <ul>
+        {{ range .Sections }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }} ({{len (where .Pages  ".IsSection" false)}})</a>
+                {{if len .Sections}}
+                    {{ partial "recursive_sidebar" . }}
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}
+
+<h2>Kategorien</h2>
+<a href="/">Inbox ({{len (where .Site.Home.Pages  ".IsSection" false)}})</a>
+{{ partial "recursive_sidebar" . }}

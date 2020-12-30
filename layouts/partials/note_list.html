@@ -1,0 +1,20 @@
+{{ range .Pages }}
+    {{ if not .IsSection}}
+        <article class="card">
+            <div class="card-body">
+
+            <h3 class="card-title">
+                {{ if .Title }}
+                    <a href="{{.RelPermalink}}">{{.Title}}</a>
+                {{ else }}
+                    <a href="{{.RelPermalink}}">{{.File.LogicalName}}</a>
+                {{ end }}
+            </h3>
+            {{ if .Date }}
+                <h5 class="card-subtitle text-muted">{{ dateFormat "2006-01-02" .Date }}</h5>
+            {{ end }}
+            <p class="card-text">{{ truncate 300 .Plain }}</p>
+            </div>
+        </article>
+    {{ end }}
+{{ end }}

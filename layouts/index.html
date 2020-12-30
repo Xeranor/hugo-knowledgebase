@@ -1,0 +1,12 @@
+{{ define "main" }}
+
+    <div class="note-list">
+        <h2>Inbox</h2>
+        {{ partial "note_list" . }}
+            {{ range .Site.Taxonomies.tags }}
+            <span>
+                <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+            </span>
+            {{ end }}
+    </div>
+{{ end }}
