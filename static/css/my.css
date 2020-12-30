@@ -14,10 +14,11 @@
 
 body {
     color: var(--foreground);
+    font-size: 1rem;
     margin: 0;
     height: 100vh;
     display: grid;
-    grid-template-rows: 60px auto;
+    grid-template-rows: 4rem auto;
     grid-template-columns: 350px auto;
     grid-template-areas: 
         'header header'
@@ -57,6 +58,8 @@ a {
 }
 
 #search-box {
+    border: 0px;
+    padding: 0px;
     width:auto;
     flex-grow: 1;
     font-size: 2rem;
@@ -74,7 +77,7 @@ a {
   width: 37.5px;
   height: 37.5px;
   background: transparent;
-  font-size: 32px;
+  font-size: 1.25rem;
   color: white;
   line-height: 0.8em;
   z-index: 101;
