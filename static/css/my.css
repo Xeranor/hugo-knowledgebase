@@ -13,7 +13,7 @@
 
 
 body {
-    color: var(--foreground);
+    color: var(--base05);
     font-size: 1rem;
     margin: 0;
     height: 100vh;
@@ -26,28 +26,29 @@ body {
 }
 
 a {
-    color: var(--purple);
+    color: var(--base08);
     text-decoration: none;
 }
 
 #main {
     grid-area: content;
-    background-color: var(--background);
-    color: var(--foreground);
+    background-color: var(--base00);
+    color: var(--base05);
     overflow: auto;
 }
 
 #container {
     margin:auto;
     max-width: 700px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 50px;
 }
 
 /* START Header */
 #header {
     grid-area: header;
-    background-color: var(--background-light);
+    background-color: var(--base01);
     display: flex;
     padding-left: 360px;
     padding-right: 10px;
@@ -63,6 +64,9 @@ a {
     width:auto;
     flex-grow: 1;
     font-size: 2rem;
+    color: var(--base05);
+    background-color: var(--base03);
+    padding-left: 20px;
 }
 
 #toggle-sidebar {
@@ -95,7 +99,7 @@ nav ul {
     padding-left: 20px;
     grid-area: sidebar;
     transition: left 0.4s cubic-bezier(0.25, 1, 0.25, 1), width 0.4s cubic-bezier(0.25, 1, 0.25, 1);
-    background-color: var(--background-light);
+    background-color: var(--base01);
     z-index: 100;
 }
 
@@ -109,17 +113,17 @@ nav ul {
 }
 
 #sidebar a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 }
 
 #sidebar h2{
-    color: var(--foreground-muted);
+    color: var(--base05);
 }
 /* END Sidebar */
 
 
 .note-list article {
-    background-color: var(--background-light);
+    background-color: var(--base01);
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 5px;
@@ -134,7 +138,7 @@ nav ul {
 .note-list  h5 {
     margin-top:7px;
     margin-bottom: 5px;
-    color: var(--foreground-muted);
+    color: var(--base05);
 }
 
 
@@ -201,7 +205,7 @@ nav ul {
     border-spacing: 5px;
     width: 100%;
     border-collapse: separate;
-    background-color: var(--background-light);
+    background-color: var(--base01);
 }
 
 #content-container table.metadata td {
@@ -210,11 +214,11 @@ nav ul {
 }
 
 #content pre {
-    background-color: var(--background-light);
+    background-color: var(--base02);
     padding: 10px;
     overflow: auto;
 }
 
 #content code {
-    background-color: var(--background-light);
+    background-color: var(--base02);
 }

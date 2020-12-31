@@ -13,6 +13,9 @@
             {{ if .Date }}
                 <h5 class="card-subtitle text-muted">{{ dateFormat "2006-01-02" .Date }}</h5>
             {{ end }}
+            {{ if .Page.Params.uuid }}
+                op {{ .Page.Params.uuid }}
+            {{ end }}
             <p class="card-text">{{ truncate 300 .Plain }}</p>
             </div>
         </article>
