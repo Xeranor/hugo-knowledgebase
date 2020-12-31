@@ -214,7 +214,7 @@ nav ul {
 }
 
 #content pre {
-    background-color: var(--base02);
+    background-color: var(--base02) !important;
     padding: 10px;
     overflow: auto;
 }
